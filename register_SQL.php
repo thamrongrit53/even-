@@ -19,21 +19,26 @@
             $target = "images_profile/".basename($image);
             
              $sql="INSERT INTO `std`(`pre`, `std_id`, `f_name`, `l_name`, `email`, `class`, `branch`, `tel`, `address`, `img`,password, `status`) VALUES ('$pre','$std_id','$f_name','$l_name','$email','$class','$branch','$tel','$address','$image','$pass','$status')";
-            mysqli_query( $condb, $sql);
+             $query= mysqli_query( $condb, $sql);
             if (move_uploaded_file($_FILES['image']['tmp_name'],$target)) {
                $msg = "Image uploaded successfully";
             }else{
                $msg = "Failed to upload image";
             }
+            if (!$query) {
+              header("location:error.php");
+              exit();
+            } 
       
             }
           
       ?>
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>SBAC</title>
   <meta charset="utf-8">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

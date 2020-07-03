@@ -16,7 +16,7 @@
 	if(!$objResult)
 	{		
 	
-			echo "$user and $phone Incorrect!";
+			header("location:error_pass.php");
 	}
 	else
 	{		
@@ -25,23 +25,22 @@
 			$_SESSION["l_name"] = $objResult["l_name"];
 			$_SESSION["class"] = $objResult["class"];
 			$_SESSION["branch"] = $objResult["branch"];
+			$_SESSION["img"] = $objResult["img"];
 			$_SESSION["std_id"] = $objResult["std_id"];
 			$_SESSION["status"] = $objResult["status"];
 
-  			setcookie($username, md5($objResult["name_u"]), time() + (86400 * 30), "/");
+  			setcookie($username, md5($objResult["std_id"]), time() + (86400 * 30), "/");
 
 			if($objResult["status"] == "admin")
 			{
 				
-				header("location:admin_sys.php");
+				header("location:admin.php");
 			}
 			else if ($objResult["status"] == "std")
 			{
 				header("location:home.php");
 			}else{
-				 echo "Please Login!";
-    			sleep(5);
-				header("location:login.php");
+				header("location:error.php");
 			};
 	};
 	mysqli_close($condb);

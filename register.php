@@ -51,59 +51,63 @@ a{
                 <img id="profile-img" class="rounded-circle profile-img-card" src="img/sbac.jpg" />
               </div>
               <label>คำนำหน้า</label>
-                 <select class="form-control" name="pre">
+                 <select class="form-control rounded-pill" name="pre">
                 <option>นาย</option>
                 <option>นางสาว</option>
                 <option>นาง</option>
                 </select>
                <label>ชื่อ</label>
-             <input class="form-control" type="text" name="f_name" placeholder="ชื่อ">
+             <input class="form-control rounded-pill" type="text" name="f_name" placeholder="ชื่อ">
                <label>นามสกุล</label>
-             <input class="form-control" type="text" name="l_name" placeholder="นามสกุล">
+             <input class="form-control rounded-pill" type="text" name="l_name" placeholder="นามสกุล">
                <label>เบอร์โทร</label>
-             <input class="form-control" type="text" name="tel" placeholder="เบอร์โทร">
+             <input class="form-control rounded-pill" type="text" name="tel" placeholder="เบอร์โทร">
               <label>ที่อยู่</label>
-              <textarea class="form-control"rows="3" name="address"></textarea>
+              <textarea class="form-control rounded-pill"rows="3" name="address"></textarea>
               <label>รหัสนักศึกษา</label>
-             <input class="form-control" type="text" name="std_id" placeholder="รหัสนักศึกษา">
+             <input class="form-control rounded-pill" type="text" name="std_id" placeholder="รหัสนักศึกษา">
               <label>อีเมล</label>
-              <input class="form-control" type="text" name="email" placeholder="รหัสนักศึกษา@bac.ac.th">
+              <input class="form-control rounded-pill" type="text" name="email" placeholder="รหัสนักศึกษา@bac.ac.th">
               <label>รหัส</label>
-              <input class="form-control" name="password" id="password" type="password" onkeyup='check();'>
+              <input class="form-control rounded-pill" name="password" id="password" type="password" onkeyup='check();'>
               <label>ยืนยันรหัส</label><span id='message'></span>
-              <input class="form-control" type="password" name="confirm_password" id="confirm_password"  onkeyup='check();'> 
+              <input class="form-control rounded-pill" type="password" name="confirm_password" id="confirm_password"  onkeyup='check();'> 
           
            
              <label>ชั้น</label>
-                 <select class="form-control" name="class">
+                 <select class="form-control rounded-pill" name="class">
                 <option>ปวช.1</option>
                 <option>ปวช.2</option>
                 <option>ปวช.3</option>
                 <option>ปวส.1</option>
                 <option>ปวส.2</option>
+                <option>ปวส.1เสาร์-อาทิตย์</option>
+                <option>ปวส.2เสาร์-อาทิตย์</option>
                 </select>
               <label>สาขา</label>
-                 <select class="form-control" name="branch">
+                 <select class="form-control rounded-pill" name="branch">
                 <option>การบัญชี</option>
                 <option>คอมพิวเตอร์ธุรกิจ</option>
                 <option>การตลาด</option>
                 </select>
                <label>โปรไฟล์</label>
                <input type="file" name="image" class="form-control-file">
-                 <button type="submit" class="btn btn btn-lg btn-primary btn-block" name="upload">สมัคร</button>
+               <br>
+                 <button type="submit" class="btn btn btn-lg btn-primary btn-block rounded-pill" name="upload">สมัคร</button>
               </form>
                <br>
-               <button class="btn btn-lg btn-warning btn-block" type="submit" ><a href="login.php">เข้าสู่ระบบ</a></button>
+               <a href="login.php">เข้าสู่ระบบ</a></button>
             </div>
              
           <div class="col-sm-4"> </div>
-           <br>
+           
             
         </div>
 </div>
-
-<?php 
-
-require_once('footer.php'); 
-
-?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

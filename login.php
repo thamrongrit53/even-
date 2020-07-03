@@ -23,9 +23,10 @@ body{
 label{
  	color: #fff;  
 }
-a{
+a,p{
   color: #fff;
 }
+
 </style>
 
 </head>
@@ -34,7 +35,7 @@ a{
 <div class="container">
     
    
-        <div class="row" style="margin-top: 200px">
+        <div class="row" style="margin-top:120px">
             <div class="col-sm-4">
              
           </div>
@@ -44,23 +45,23 @@ a{
             	</div>
               <form action="check_login.php" method="POST">
                 <label>อีเมล</label>
-              <input class="form-control" type="text" name="username" placeholder="อีเมล">
+              <input class="form-control rounded-pill" type="text" name="username" placeholder="อีเมล">
               <label>รหัสผ่าน</label>
-              <input class="form-control" type="password" name="password" placeholder="รหัส">
+              <input class="form-control rounded-pill" type="password" name="password" placeholder="รหัสผ่าน">
               <br>
-              <button type="submit" class="btn btn btn-lg btn-primary btn-block">เข้าสู่ระบบ</button>
+              <button type="submit" class="btn btn btn-lg btn-primary btn-block rounded-pill">เข้าสู่ระบบ</button>
               </form>
               <br>
-               <button class="btn btn-lg btn-warning btn-block" type="submit"><a href="register.php">สมัคร</a></button>
+              <p>&nbsp;&nbsp;หากยังไม่เป็นเป็นสมาชิก &nbsp;&nbsp;<a href="register.php">คลิกเพื่อสมัคร</a></p>
           </div>
             <div class="col-sm-4">
              
           </div>
         </div>
 </div>
-
-<?php 
-
-require_once('footer.php'); 
-
-?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -1,3 +1,7 @@
+<?php 
+require_once('session_std.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +16,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=K2D:wght@700&display=swap" rel="stylesheet">
 <style type="text/css">
-  a{
-    color: #fff;
-  }
+  
+  .md-avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+}
+
 </style>
 </head>
-<body style="height:1500px; font-family: 'K2D', sans-serif;">
+<body style="font-family: 'K2D', sans-serif;">
 
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Sbac Even</a>
+  <a class="navbar-brand" href="home.php">SBAC Event</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -28,29 +36,32 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-        <a class="nav-link" href="#">ข่าวประชาสัมพันธ์</a>
+        <a class="nav-link" href="home.php">ข่าวประชาสัมพันธ์</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">บันทึกชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</a>
+        <a class="nav-link disabled" href="from_even_216h.php">บันทึกชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">บันทึกกิจกรรมองค์การวิชาชีพ</a>
+        <a class="nav-link" href="even_join.php">บันทึกกิจกรรมองค์การวิชาชีพ</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           รายงาน
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">1</a>
-          <a class="dropdown-item" href="#">2</a>
+          <a class="dropdown-item" href="#">รายงานชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</a>
+          <a class="dropdown-item" href="#">รายงานชั่วโมงกิจกรรมองค์การวิชาชีพ</a>
         </div>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">สมัครฝึกงาน</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-danger my-2 my-sm-0"><a href="log_out.php">ออกจากระบบ</a></button>
-    </form>
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <img src="images_profile/<?php echo $_SESSION["img"]; ?>" class="md-avatar rounded" alt="profile" style="height:40px;width: 40px;margin-right: 5px;">
+       <h5 style="margin-top:10px; color:#fff; margin-right: 10px;"><?php echo $_SESSION["std_id"]; ?></h5>
+       <button class="btn btn-danger my-2 my-sm-0"><a href="log_out.php">ออกจากระบบ</a></button>
+      </ul>
   </div>
 </nav>
