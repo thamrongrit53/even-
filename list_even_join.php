@@ -14,8 +14,6 @@ if(mysqli_num_rows($result) > 0)
   <div class="table-responsive">
    <table class="table table bordered">
     <tr>
-    <th>รหัสนักศึกษา</th>
-     <th>ชื่อ-นามสกุล</th>
      <th>กิจจกรรม</th>
      <th>วันที่เข้าร่วม</th>
      <th></th>
@@ -25,8 +23,6 @@ if(mysqli_num_rows($result) > 0)
  {
   $output .= '
    <tr>
-   <td>'.$row["std_id"].'</td>
-    <td>'.$row["f_name"]." ".$row["l_name"].'</td>
     <td>'.$row["name_e"].'</td>
     <td>'.$row["join_time"].'</td>
      <td>

@@ -6,7 +6,7 @@
    width: 100%;
    color: white;
    text-align: center;
-   margin-top:500px;
+   margin-top:1000px;
 }
 a{
   color:#fff;

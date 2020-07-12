@@ -40,7 +40,11 @@ $result = mysqli_query($condb,$query);
     <textarea class="form-control"rows="3" name="dis_e" ></textarea>
     <button class="btn btn-primary" type="submit" name="submit">บันทึก</button>
   </form>
+
+
+
      <?php
+  
       }
       ?>
     

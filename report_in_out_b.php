@@ -1,25 +1,23 @@
 <?php 
 require_once('condb.php');
-require_once('session_std.php');
-require_once('navbar.php'); 
+require_once('session_admin.php');
+require_once('navbar_admin.php'); 
 
 ?>
+
 <div class="container" style="margin-top: 20px;">
 	<div class="row">
 		<div class="col-md-12">
-			
-
-
-				<h3>กิจกรรมที่เข้าร่วม</h3>
-<!-- 				  <div class="form-group">
+			<div class="text-center">
+				<h3>รายงานเช็คชื่อเข้า-ออก สาขาคอมพิวเตอร์ธุรกิจ</h3>
+				  <div class="form-group">
     <div class="input-group">
      <span class="input-group-addon">ค้นหา</span>
-     <input type="text" name="search_text" id="search_text" placeholder="กิจกรรม" class="form-control" />
+     <input type="text" name="search_text" id="search_text" placeholder="ชั้นปี" class="form-control" />
     </div>
-   </div> -->
-    		
+   </div>
     		<div id="result"></div>
-    	
+    	</div>
 		</div>
 	</div>  
 </div>
@@ -35,7 +33,7 @@ $(document).ready(function(){
  function load_data(query)
  {
   $.ajax({
-   url:"list_even_join.php",
+   url:"list_in_out_b.php",
    method:"POST",
    data:{query:query},
    success:function(data)

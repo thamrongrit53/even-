@@ -13,15 +13,6 @@ $result = mysqli_query($condb,$query);
 $result = mysqli_query($condb,$query);
 }
 
-$std_id=$_SESSION["std_id"];
-
-$query2="SELECT SUM(sum_time) AS num2  FROM even_std_36h WHERE std_id='$std_id'";
-$result2 = mysqli_query($condb,$query2);
-$objResult2 = mysqli_fetch_array($result2,MYSQLI_ASSOC);
-
-$query1="SELECT SUM(sum_time) AS num1 FROM even_216h WHERE std_id='$std_id'";
-$result1 = mysqli_query($condb,$query1);
-$objResult1 = mysqli_fetch_array($result1,MYSQLI_ASSOC);
 
 
 ?>
@@ -47,29 +38,22 @@ transform: all 2.5s ease;
 <br>
 
 <div class="container">
-	<div class="row">
+	<div class="row justify-content-center">
 		<div class="col-md-4">
-      <div class="text-center">
-        <h3>QR Code </h3>
-         <div id="qrcode" style="margin-left:20px;"></div> 
-      </div>
+      
     </div>
-		<div class="col-md-4" style="margin-top: 10px;">
-		  <div class="card bg-dark text-white" style="border-radius: 20px;">
-    <div class="card-body text-center">
-      <h2>กิจกรรมองค์การวิชาชีพ</h2><br>
-       <h2><?php echo $objResult2["num2"]; ?>&nbsp;ชั่วโมง</h2><br> 
-      </div>
+		<div class="col-md-4">
+		<div class="text-center  align-content-md-center">
+        <h3>QR Code </h3>
+          <div class="card">
+    <div class="card-body">
+      <div id="qrcode"></div> 
+    </div>
+  </div>
       </div>
 		</div>
-		<div class="col-md-4" style="margin-top: 10px;">
-      <div class="card bg-dark text-white" style="border-radius: 20px;">
-    <div class="card-body text-center">
-      <h2>ชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</h2><br>
-       <h2><?php echo $objResult1["num1"]; ?> &nbsp;ชั่วโมง</h2><br> 
-      </div>
-      </div>
-
+		<div class="col-md-4">
+  
     </div>
 	</div>  
 </div>

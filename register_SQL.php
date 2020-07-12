@@ -17,7 +17,20 @@
             $image = $_FILES['image']['name'];
             $status = "std";
             $target = "images_profile/".basename($image);
-            
+          
+            $check = "SELECT std_id FROM std WHERE std_id = '$std_id'";
+            $result1 = mysqli_query($condb, $check) or die(mysqli_error());
+            $num=mysqli_num_rows($result1);
+
+    if($num > 0)
+    {
+    echo "<script>";
+    echo "alert(' ข้อมูลซ้ำ กรุณาเพิ่มใหม่อีกครั้ง !');";
+    echo "window.history.back();";
+    echo "</script>";
+     exit();
+    
+    }else{
              $sql="INSERT INTO `std`(`pre`, `std_id`, `f_name`, `l_name`, `email`, `class`, `branch`, `tel`, `address`, `img`,password, `status`) VALUES ('$pre','$std_id','$f_name','$l_name','$email','$class','$branch','$tel','$address','$image','$pass','$status')";
              $query= mysqli_query( $condb, $sql);
             if (move_uploaded_file($_FILES['image']['tmp_name'],$target)) {
@@ -25,39 +38,21 @@
             }else{
                $msg = "Failed to upload image";
             }
-            if (!$query) {
-              header("location:error.php");
-              exit();
-            } 
+             if (!$query) {
+               echo "<script>";
+                echo "alert('กรุณาเพิ่มใหม่อีกครั้ง !');";
+                echo "window.history.back();";
+                  echo "</script>";
+            } else{
+                echo "<script type='text/javascript'>";
+                echo "alert('เพิ่มข้อมูลสำเร็จ');";
+                echo "window.location = 'login.php'; ";
+                echo "</script>";
+            }
       
             }
+          }
           
       ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>SBAC</title>
-  <meta charset="utf-8">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=K2D:wght@700&display=swap" rel="stylesheet">
 
-</head>
-<body style="font-family: 'K2D', sans-serif;">
-
-<div class="container"  id="myModal">
-  <div class="jumbotron" style="margin-top: 300px;">
-    <h1 class="text-center">
-      สมัครสำเร็จ
-    </h1>  
-   </div>
-</div>  
-</body>
-</html>
-<script type="text/JavaScript">
-    setTimeout("location.href = 'login.php';",2000);
-  </script>
      

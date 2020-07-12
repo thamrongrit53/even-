@@ -17,10 +17,16 @@ $status = $_POST['status'];
 
  $sql="UPDATE `std` SET `pre`='$pre',`std_id`='$std_id',`f_name`='$f_name',`l_name`='$l_name',`email`='$email',`class`='$clas',`branch`='$branch',`tel`='$tel',`address`='$address',`status`='$status' WHERE id = '$id'";
   $query=mysqli_query($condb,$sql);   
-  if ($query){
-     header("location:manager_user.php");
+
+       if ($query){
+      echo "<script type='text/javascript'>";
+                echo "alert('สำเร็จ');";
+                echo "window.location = 'manager_user.php'; ";
+                echo "</script>";
             }else{
-     header("location:error.php");
+      			echo "<script>";
+                echo "alert('กรุณาเพิ่มใหม่อีกครั้ง !');";
+                echo "window.history.back();";
+                  echo "</script>";
             }
-     
 ?>
