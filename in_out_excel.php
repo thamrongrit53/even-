@@ -1,16 +1,21 @@
 <html xmlns:o="urn:schemas-microsoft-com:office:office"
 xmlns:x="urn:schemas-microsoft-com:office:excel"
 xmlns="http://www.w3.org/TR/REC-html40">
+
 <?php  
 require_once('condb.php');
 require_once('session_admin.php');
 
 $output = '';
-$cla="ปวช.1";
+$branch=$_GET["branch"];
+$cla=$_GET["class"];
+$date=$_GET["date"];
 
-$query = "SELECT * FROM `attendance` WHERE class='ปวช.1' ORDER BY id DESC";
+$query="SELECT * FROM `attendance`WHERE class='$cla' AND branch='$branch' AND `time`LIKE '%".$date."%' ORDER BY id DESC";
 $result = mysqli_query($condb,$query);
+
  if(mysqli_num_rows($result) > 0){
+ 
 $output .= '
   <div class="table-responsive">
    <table class="table table bordered">
@@ -27,12 +32,12 @@ $output .= '
  {
   $output .= '
    <tr>
-   <td><?php echo $row["std_id"]; ?></td>
-    <td><?php echo$row["f_name"]." ".$row["l_name"] ;?></td>
-    <td><?php echo $row["class"];?></td>
-    <td><?php echo$row["branch"];?></td>
-    <td><?php echo$row["status"];?></td>
-    <td><?php echo$row["time"];?></td>
+   <td>'.$row["std_id"].'</td>
+    <td>'.$row["f_name"]." ".$row["l_name"].'</td>
+    <td>'.$row["class"].'</td>
+    <td>'.$row["branch"].'</td>
+    <td>'.$row["status"].'</td>
+    <td>'.$row["time"].'</td>
    </tr>
   ';
  }

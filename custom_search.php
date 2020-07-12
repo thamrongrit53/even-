@@ -22,7 +22,7 @@ $result = mysqli_query($condb,$query);
 				<h3>รายงานเช็คชื่อเข้า-ออก</h3>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     ค้นหาแบบกำหนดเอง
-  </button><a href="in_out_excel.php?class=<?php echo $cla;?>&&branch=<?php echo $branch;?>&&date=<?php echo $ddd;?>" class="btn btn-success"> Export->Excel </a>
+  </button> <a href="in_out_excel.php?class=<?php echo $cla;?>&&branch=<?php echo $branch;?>&&date=<?php echo $ddd;?>" class="btn btn-success"> Export->Excel </a>
  <div class="table-responsive">
    <table class="table table bordered">
     <tr>
@@ -32,6 +32,7 @@ $result = mysqli_query($condb,$query);
      <th>สาขา</th>
      <th>สถานะ</th>
     <th>วันที่</th>
+    <th></th>
     </tr>
 <?php 
  while($row = mysqli_fetch_array($result))
@@ -44,6 +45,18 @@ $result = mysqli_query($condb,$query);
     <td><?php echo$row["branch"];?></td>
     <td><?php echo$row["status"];?></td>
     <td><?php echo$row["time"];?></td>
+    <td><?php 
+    $ct=date_create($row["time"]);
+    $ts=date_format($ct,"H");
+    if ($ts > 7 && $row["status"]=='เข้า' ) {
+      echo "สาย";
+      echo $ts;
+    }elseif($ts > 6 && $row["status"]=='เข้า' ) {
+     echo "ปกติ";
+      echo $ts;
+    }
+     ?></td>
+    
    </tr>
 
 
