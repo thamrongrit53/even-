@@ -9,7 +9,7 @@ $cla=$_POST["class"];
 $date=$_POST["date"];
 $dd=date_create($date);
 $ddd=date_format($dd,"d-m-Y");
-$query = "SELECT * FROM `attendance`WHERE  class='$cla' AND branch='$branch' AND `time`LIKE '%".$ddd."%' ORDER BY id DESC";
+$query = "SELECT * FROM `attendance`WHERE status='เข้า' AND class='$cla' AND branch='$branch' AND `time`LIKE '%".$ddd."%' ORDER BY id DESC";
 $result = mysqli_query($condb,$query);
 
 
@@ -46,15 +46,31 @@ $result = mysqli_query($condb,$query);
     <td><?php echo$row["status"];?></td>
     <td><?php echo$row["time"];?></td>
     <td><?php 
-    $ct=date_create($row["time"]);
-    $ts=date_format($ct,"H");
-    if ($ts > 7 && $row["status"]=='เข้า' ) {
-      echo "สาย";
-      echo $ts;
-    }elseif($ts > 6 && $row["status"]=='เข้า' ) {
-     echo "ปกติ";
-      echo $ts;
+     $ct=date_create($row["time"]);
+    $th=date_format($ct,"H");
+    $ti=date_format($ct,"i");
+
+
+    if($row["class"] !="ปวส.1เสาร์-อาทิตย์" && $row["class"] !="ปวส.2เสาร์-อาทิตย์"){
+         if ($th > 7 && $row["status"]=='เข้า' ) {
+           echo "สาย";
+           }elseif($th > 5 && $row["status"]=='เข้า' ) {
+             echo "ปกติ";
     }
+    }else{
+      if ($th > 7 && $row["status"]=='เข้า' ) {
+         if ($th >  && $ti < 30) {
+          echo "ปกติ";
+        }elseif ($th > 7 && $ti >30) {
+          echo "สาย";
+        }elseif ($th > 8) {
+          echo "สาย";
+        }
+           }elseif($th > 5 && $row["status"]=='เข้า' ) {
+             echo "ปกติ";
+
+    }
+   }
      ?></td>
     
    </tr>
@@ -120,3 +136,7 @@ $result = mysqli_query($condb,$query);
   </div>
 </div>
 
+<?php 
+require_once('footer.php'); 
+
+?>

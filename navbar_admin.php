@@ -44,7 +44,7 @@
           รายงาน
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">รายงานชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</a>
+          <a class="dropdown-item" href="report_even_216h.php">รายงานชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</a>
           <a class="dropdown-item" href="report_join_even_36h.php">รายงานผู้เข้าร่วมกิจกรรมองค์การวิชาชีพ</a>
           <a class="dropdown-item" href="report_even_36h.php">รายงานชั่วโมงกิจกรรมองค์การวิชาชีพ</a>
            <a class="dropdown-item" href="report_in_out.php">รายงานเช็คชื่อเข้า-ออก</a>

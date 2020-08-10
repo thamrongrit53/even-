@@ -38,9 +38,17 @@ require_once('session_std.php');
       <li class="nav-item ">
         <a class="nav-link" href="home.php">ข่าวประชาสัมพันธ์</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="from_even_216h.php">บันทึกชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</a>
-      </li>
+      <?php
+      if ($_SESSION["class"]=="ปวช.3" || $_SESSION["class"]=="ปวส.2"|| $_SESSION["class"]=="ปวส.2เสาร์-อาทิตย์") {
+        echo '<li class="nav-item">
+        <a class="nav-link" href="from_even_216h.php">บันทึกชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</a>
+      </li>';
+      }
+     
+
+       ?>
+      
+
       <li class="nav-item">
         <a class="nav-link" href="even_join.php">บันทึกกิจกรรมองค์การวิชาชีพ</a>
       </li>
@@ -53,9 +61,21 @@ require_once('session_std.php');
           <a class="dropdown-item" href="std_report_even_36h.php">รายงานชั่วโมงกิจกรรมองค์การวิชาชีพ</a>
         </div>
       </li>
+  <?php
+      if ($_SESSION["class"]=="ปวช.3" || $_SESSION["class"]=="ปวส.2"|| $_SESSION["class"]=="ปวส.2เสาร์-อาทิตย์") {
+        echo '  <li class="nav-item">
+        <a class="nav-link" href="https://www.sbac.online/internship/login.php">สมัครฝึกงาน</a>
+      </li>';
+      }
+     
+
+       ?>
+
+    
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">สมัครฝึกงาน</a>
+        <a class="nav-link" href="https://bit.ly/sbac_sickform">ใบลา</a>
       </li>
+
     </ul>
 
     <ul class="navbar-nav ml-auto nav-flex-icons">

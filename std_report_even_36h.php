@@ -124,7 +124,7 @@ if (radar) {
      <input type="text" name="search_text" id="search_text" placeholder="ค้นหา" class="form-control" />
     </div>
    </div>
-    		
+    		ดาวโหลดรายงานในรูปแบบ PDF <a class="btn btn-danger" href="http://sbac.online/event/std_event_pdf.php">คลิกที่นี้</a>
     		<div id="result"></div>
     	</div>
 		</div>

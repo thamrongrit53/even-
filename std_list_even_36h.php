@@ -1,4 +1,3 @@
-
 <?php
 require_once('condb.php');
 require_once('session_std.php');
