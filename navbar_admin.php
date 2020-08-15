@@ -37,6 +37,9 @@
         <a class="nav-link" href="admin.php">ภาพรวม</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="dis_behavior">ตัดคะแนนพฤติกรรม</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="add_even_36h.php">ประชาสัมพัมพันธ์กิจกรรม</a>
       </li>
       <li class="nav-item dropdown">
@@ -47,6 +50,7 @@
           <a class="dropdown-item" href="report_even_216h.php">รายงานชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</a>
           <a class="dropdown-item" href="report_join_even_36h.php">รายงานผู้เข้าร่วมกิจกรรมองค์การวิชาชีพ</a>
           <a class="dropdown-item" href="report_even_36h.php">รายงานชั่วโมงกิจกรรมองค์การวิชาชีพ</a>
+          <a class="dropdown-item" href="report_in_out_block.php">รายงานเช็คชื่อเข้า-ออก block</a>
            <a class="dropdown-item" href="report_in_out.php">รายงานเช็คชื่อเข้า-ออก</a>
            
         </div>
@@ -55,7 +59,7 @@
         <a class="nav-link" href="manager_user.php">จัดการผู้ใช้</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">ระบบฝึกงาน</a>
+        <a class="nav-link" href="https://www.sbac.online/internship/teacher/login.php">ระบบฝึกงาน</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -64,4 +68,5 @@
     </form>
   </div>
 </nav>
+
 

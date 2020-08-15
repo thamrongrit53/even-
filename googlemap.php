@@ -1,9 +1,20 @@
+<?php
+  
+$lat=$_GET["lat"];
+ $lng=$_GET["lng"];
+echo '"lat".$lat."AND".$lng.';
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Geolocation</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
+      <title>SBAC</title>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvUzWmUZCWlkr8-79HNtgnUAUSGAJnBYg&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -19,72 +30,78 @@
     </style>
   </head>
   <body>
-    <button onclick="getLocation()">หาสถานที</button>
+<!--   <script>
+      "use strict";
 
-<p id="demo"></p>
+      let map;
 
-<script>
-var x = document.getElementById("demo");
+      function initMap() {
+        const mapOptions = {
+          zoom: 8,
+          center: {
+            lat: '<?php echo $lat; ?>',
+            lng: '<?php echo $lng; ?>'
+          }
+        };
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        const marker = new google.maps.Marker({
+         
+          position: {
+            lat: '<?php echo $lat; ?>',
+            lng: '<?php echo $lng; ?>'
+          },
+          map: map
+        });
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(initMap);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
-</script>
-
-    <div id="map"></div>
+        const infowindow = new google.maps.InfoWindow({
+          content: "<p>Marker Location:" + marker.getPosition() + "</p>"
+        });
+        google.maps.event.addListener(marker, "click", () => {
+          infowindow.open(map, marker);
+        });
+      }
+    </script> -->
     <script>
-      // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
-      var map, infoWindow;
-      function initMap(position) {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: position.coords.latitude, lng: position.coords.longitude},
-          zoom:18
-         });
-        infoWindow = new google.maps.InfoWindow;
+      "use strict";
 
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
+      // In this example, we center the map, and add a marker, using a LatLng object
+      // literal instead of a google.maps.LatLng object. LatLng object literals are
+      // a convenient way to add a LatLng coordinate and, in most cases, can be used
+      // in place of a google.maps.LatLng object.
+      let map;
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('อยู่ที่นี่.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-      }
+      function initMap() {
+        const mapOptions = {
+          zoom: 8,
+          center: {
+            lat: -34.397,
+            lng: 150.644
+          }
+        };
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        const marker = new google.maps.Marker({
+          // The below line is equivalent to writing:
+          // position: new google.maps.LatLng(-34.397, 150.644)
+          position: {
+            lat: -34.397,
+            lng: 150.644
+          },
+          map: map
+        }); // You can use a LatLng literal in place of a google.maps.LatLng object when
+        // creating the Marker object. Once the Marker object is instantiated, its
+        // position will be available as a google.maps.LatLng object. In this case,
+        // we retrieve the marker's position using the
+        // google.maps.LatLng.getPosition() method.
 
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map);
+        const infowindow = new google.maps.InfoWindow({
+          content: "<p>Marker Location:" + marker.getPosition() + "</p>"
+        });
+        google.maps.event.addListener(marker, "click", () => {
+          infowindow.open(map, marker);
+        });
       }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvUzWmUZCWlkr8-79HNtgnUAUSGAJnBYg&callback=initMap">
-    </script>
+    <div id="map"></div>
+ 
   </body>
 </html>

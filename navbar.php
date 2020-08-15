@@ -64,7 +64,7 @@ require_once('session_std.php');
   <?php
       if ($_SESSION["class"]=="ปวช.3" || $_SESSION["class"]=="ปวส.2"|| $_SESSION["class"]=="ปวส.2เสาร์-อาทิตย์") {
         echo '  <li class="nav-item">
-        <a class="nav-link" href="https://www.sbac.online/internship/login.php">สมัครฝึกงาน</a>
+        <a class="nav-link" href="https://www.sbac.online/internship/login.php">ระบบฝึกงาน</a>
       </li>';
       }
      
