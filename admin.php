@@ -76,54 +76,6 @@ $query3 = "SELECT COUNT(id) AS totol, name_e AS datesave FROM join_even GROUP BY
 </div>
 </div>
 
-<!-- <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<canvas id="myChart"></canvas>
-          <script>
-          var ctx = document.getElementById("myChart").getContext('2d');
-          var myChart = new Chart(ctx, {
-           type: 'line',
-             data: {
-                   labels: [<?php echo $datesave;?>
-    
-                         ],
-                datasets: [{
-                 label: 'การเข้าร่วมกิจกรรม',
-                 data: [<?php echo $totol;?>
-                      ],
-            backgroundColor: [
-               
-                'rgba(153, 102, 255, 0.2)',
-                
-            ],
-            borderColor: [
-            
-                'rgba(153, 102, 255, 1)',
-                
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }]
-        }
-    }
-});
-</script>  
-
-		</div>
-	
-		
-			
-	</div>
-</div> -->
-
 <div class="container" style="margin-top: 20px;">
   <div class="row">
     <div class="col-md-12">

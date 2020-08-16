@@ -37,7 +37,7 @@
         <a class="nav-link" href="admin.php">ภาพรวม</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="dis_behavior">ตัดคะแนนพฤติกรรม</a>
+        <a class="nav-link" href="dis_behavior.php">ตัดคะแนนพฤติกรรม</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="add_even_36h.php">ประชาสัมพัมพันธ์กิจกรรม</a>
