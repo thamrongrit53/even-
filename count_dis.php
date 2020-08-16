@@ -1,10 +1,17 @@
 <?php 
 require_once('condb.php');
+require_once('session_admin.php');
 require_once('navbar_admin.php'); 
 
 
-$query="SELECT * FROM`std`WHERE class='ปวส.2'";
-$result=mysqli_query($condb,$query);
+// $branch=$_POST["branch"];
+// $cla=$_POST["class"];
+// $date=$_POST["date"];
+// $dd=date_create($date);
+// $ddd=date_format($dd,"d-m-Y");
+
+$query = "SELECT * FROM `std`WHERE class='ปวส.2' AND branch='คอมพิวเตอร์ธุรกิจ' ORDER BY id DESC";
+$result = mysqli_query($condb,$query);
 
 
 ?>
@@ -21,7 +28,8 @@ $result=mysqli_query($condb,$query);
      <th>ชื่อ-นามสกุล</th>
      <th>ชั้น</th>
      <th>สาขา</th>
-    
+     <th>สถานะ</th>
+    <th>วันที่</th>
     <th></th>
     </tr>
 <?php 
@@ -33,32 +41,30 @@ $result=mysqli_query($condb,$query);
     <td><?php echo$row["f_name"]." ".$row["l_name"] ;?></td>
     <td><?php echo $row["class"];?></td>
     <td><?php echo$row["branch"];?></td>
+    <td><?php echo$row["status"];?></td>
+    <td><?php echo$row["time"];?></td>
     <td><?php 
-$querySQL="SELECT * FROM attendance WHERE std_id='$row["std_id"]' LIMIT 1";
-$resultSQL = mysqli_query($condb,$querySQL);
-$objResult = mysqli_fetch_array($resultSQL,MYSQLI_ASSOC);
-
-     $ct=date_create($objResult["time"]);
+     $ct=date_create($row["time"]);
     $th=date_format($ct,"H");
     $ti=date_format($ct,"i");
 
 
-    if($objResult["class"] !="ปวส.1เสาร์-อาทิตย์" && $objResult["class"] !="ปวส.2เสาร์-อาทิตย์"){
-         if ($th > 7 && $objResult["status"]=='เข้า' ) {
+    if($row["class"] !="ปวส.1เสาร์-อาทิตย์" && $row["class"] !="ปวส.2เสาร์-อาทิตย์"){
+         if ($th > 7 && $row["status"]=='เข้า' ) {
            echo "สาย";
-           }elseif($th > 5 && $objResult["status"]=='เข้า' ) {
+           }elseif($th > 5 && $row["status"]=='เข้า' ) {
              echo "ปกติ";
     }
     }else{
-      if ($th > 7 && $objResult["status"]=='เข้า' ) {
+      if ($th > 7 && $row["status"]=='เข้า' ) {
          if ($th >  && $ti < 30) {
           echo "ปกติ";
         }elseif ($th > 7 && $ti >30) {
           echo "สาย";
         }elseif ($th > 8) {
           echo "สาย";
-        // }
-           }elseif($th > 5 && $objResult["status"]=='เข้า' ) {
+        }
+           }elseif($th > 5 && $row["status"]=='เข้า' ) {
              echo "ปกติ";
 
     }
