@@ -59,6 +59,8 @@ require_once('session_std.php');
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="std_report_even_216h.php">รายงานชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</a>
           <a class="dropdown-item" href="std_report_even_36h.php">รายงานชั่วโมงกิจกรรมองค์การวิชาชีพ</a>
+        <a class="dropdown-item" href="std_report_behavior.php">รายงานคะแนนพฤติกรรม</a>
+
         </div>
       </li>
   <?php

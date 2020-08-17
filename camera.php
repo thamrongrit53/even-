@@ -2,7 +2,21 @@
 header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, X-Requested-With");
+$servername = "localhost";
+$database = "school_attendance";
+$username = "kj5ie5k0ggso";
+$password = "P@ch86eR";
+// Create connection
+$condb = new mysqli($servername, $username, $password,$database);
 
+// Check connection
+if ($condb->connect_error) {
+    die("Connection failed: " . $condb->connect_error);
+} 
+  mysqli_set_charset($condb,"utf8");
+$query = "SELECT * FROM `even_36h` ORDER BY id_e DESC LIMIT 1";
+$result = mysqli_query($condb,$query);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
  ?>
 <!DOCTYPE html>
@@ -39,11 +53,19 @@ h1,p{
 <body style=" font-family: 'K2D', sans-serif;">
 <div class="container">
   <div class="row">
-    <div class="col-md-4"></div>
+    <div class="col-md-8">
+       <div class="jumbotron bg-dark">
+    <p class="text-center">6.00น.12.59น.สถานะ=>เข้า</p>
+    <p class="text-center">13.00น.23.59น.สถานะ=>ออก</p>
+    <h1><?php echo $row["name_e"]; ?></h1> 
+    <p>วันที่&nbsp;<?php echo $row["date_e1"]; ?>&nbsp;ถึง&nbsp;<?php echo $row["date_e2"]; ?></p>
+    <p>เวลา&nbsp;<?php echo $row["time_e1"]; ?>&nbsp;ถึง&nbsp;<?php echo $row["time_e2"]; ?></p>
+
+  </div> 
+    </div>
     <div class="col-md-4">
       <video id="preview" width="350" height="350"></video>
     </div>
-    <div class="col-md-4"></div>
   </div>
    <div class="row">
     <div class="col-md-12">

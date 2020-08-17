@@ -52,7 +52,8 @@
           <a class="dropdown-item" href="report_even_36h.php">รายงานชั่วโมงกิจกรรมองค์การวิชาชีพ</a>
           <a class="dropdown-item" href="report_in_out_block.php">รายงานเช็คชื่อเข้า-ออก block</a>
            <a class="dropdown-item" href="report_in_out.php">รายงานเช็คชื่อเข้า-ออก</a>
-           
+           <a class="dropdown-item" href="report_behavior.php">รายงานคะแนนพฤติกรรม</a>
+
         </div>
       </li>
       <li class="nav-item">
