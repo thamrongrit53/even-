@@ -6,7 +6,7 @@ require_once('navbar_admin.php');
 $query = "SELECT * FROM behavior_type ORDER BY id_b DESC";
 $result = mysqli_query($condb,$query);
 
-
+$std_id=$_GET["id"]; 
 ?>
 
 <div class="container" style="margin-top: 20px;">
@@ -23,7 +23,7 @@ $result = mysqli_query($condb,$query);
 
                 </select>
     <label>รหัสนักศึกษา</label>
-    <input type="text" name="std_id" class="form-control">
+    <input type="text" name="std_id" value="<?php echo $std_id; ?>" class="form-control">
    <label>ประเภทความผิด</label>
   <select class="form-control" name="type" id="type" onchange="check()">
                     <option>เลือกประเภทความผิด</option>

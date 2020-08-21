@@ -36,6 +36,11 @@
 				
 				header("location:admin.php");
 			}
+			else if($objResult["status"] == "teacher")
+			{
+				
+				header("location:teacher.php");
+			}
 			else if ($objResult["status"] == "std")
 			{
 				header("location:home.php");

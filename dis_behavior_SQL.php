@@ -18,7 +18,7 @@
             } else{
                 echo "<script type='text/javascript'>";
                 echo "alert('เพิ่มข้อมูลสำเร็จ');";
-                echo "window.location = 'dis_behavior.php'; ";
+                echo "window.location = 'behavior.php'; ";
                 echo "</script>";
             }
       

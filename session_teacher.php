@@ -8,13 +8,13 @@ session_start();
     exit();
   }
 
-  if($_SESSION['status'] != "admin" && $_SESSION['status'] != "teacher")
+  if($_SESSION['status'] != "teacher")
   {
     echo "This page for admin only!";
     sleep(5);
     header("location:login.php");
     exit();
-  }  
+  } 
   mysqli_set_charset($condb,"utf8");
 
  ?>

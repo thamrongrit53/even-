@@ -13,9 +13,7 @@ require_once('navbar.php');
  <form method="POST" action="event_216h_SQL.php" enctype="multipart/form-data">
   <label>รหัสนักศึกษา</label>
     <input type="text" name="std_id" class="form-control" value="<?php echo $_SESSION["std_id"]; ?> " readonly>
-    <label>ชื่อกิจกรรม</label>
-    <input type="text" name="name_e" class="form-control">
-    <label>รายละเอียดกิจกรรม</label>
+    <label>กิจกรรม/รายละเอียดกิจกรรม</label>
     <textarea class="form-control"rows="3" name="dis_e"></textarea>
     <label>วันที่ดำเนินการ</label>
     <input type="date" name="date_e1" class="form-control" id="date_e1" onchange="diff_minutes()">
@@ -52,7 +50,7 @@ require_once('footer.php');
   var d2= date_e1+" "+dt2;
 
   var hours = Math.abs(new Date(d1) - new Date(d2)) / 36e5;
-  document.getElementById("sum").value = hours;
+  document.getElementById("sum").value = hours.toFixed(1);
   console.log(date_e1);
   console.log(dt1);
   console.log(dt2);

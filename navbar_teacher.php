@@ -1,6 +1,3 @@
-<?php 
-require_once('session_admin.php');
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,19 +34,11 @@ require_once('session_admin.php');
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
        <li class="nav-item">
-        <a class="nav-link" href="admin.php">ภาพรวม</a>
+        <a class="nav-link" href="teacher.php">ภาพรวม</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="behavior.php">ตัดคะแนนพฤติกรรม</a>
       </li>
-      <?php 
-         if ($_SESSION["status"]=="admin") {
-           echo ' <li class="nav-item">
-        <a class="nav-link" href="add_even_36h.php">ประชาสัมพัมพันธ์กิจกรรม</a>
-      </li>';
-         }
-      ?>
-     
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           รายงาน
@@ -64,14 +53,6 @@ require_once('session_admin.php');
 
         </div>
       </li>
-       <?php 
-         if ($_SESSION["status"]=="admin") {
-           echo '<li class="nav-item">
-        <a class="nav-link" href="manager_user.php">จัดการผู้ใช้</a>
-      </li>';
-         }
-      ?>
-      
       <li class="nav-item">
         <a class="nav-link" href="https://www.sbac.online/internship/teacher/login.php">ระบบฝึกงาน</a>
       </li>
