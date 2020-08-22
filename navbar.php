@@ -66,17 +66,27 @@ require_once('session_std.php');
   <?php
       if ($_SESSION["class"]=="ปวช.3" || $_SESSION["class"]=="ปวส.2"|| $_SESSION["class"]=="ปวส.2เสาร์-อาทิตย์") {
         echo '  <li class="nav-item">
-        <a class="nav-link" href="https://www.sbac.online/internship/login.php">ระบบฝึกงาน</a>
+        <a class="nav-link" href="https://www.sbac.online/internship/action_login.php">ระบบฝึกงาน</a>
       </li>';
       }
      
 
        ?>
 
-    
-      <li class="nav-item">
+    <?php 
+    if ($_SESSION["class"]=="ปวส.2เสาร์-อาทิตย์") {
+        echo ' <li class="nav-item">
+        <a class="nav-link" href="https://bit.ly/2Q8wwk1">ใบลา</a>
+      </li>';
+      }else{
+      echo ' <li class="nav-item">
         <a class="nav-link" href="https://bit.ly/sbac_sickform">ใบลา</a>
-      </li>
+      </li>';
+    }
+
+    ?>
+
+     
 
     </ul>
 

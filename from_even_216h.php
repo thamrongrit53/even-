@@ -14,6 +14,8 @@ require_once('navbar.php');
   <label>รหัสนักศึกษา</label>
     <input type="text" name="std_id" class="form-control" value="<?php echo $_SESSION["std_id"]; ?> " readonly>
     <label>กิจกรรม/รายละเอียดกิจกรรม</label>
+    <input type="text" name="name_e" class="form-control">
+    <label>สิ่งที่ได้เรียนรู้จากกิจกรรม</label>
     <textarea class="form-control"rows="3" name="dis_e"></textarea>
     <label>วันที่ดำเนินการ</label>
     <input type="date" name="date_e1" class="form-control" id="date_e1" onchange="diff_minutes()">

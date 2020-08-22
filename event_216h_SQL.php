@@ -4,6 +4,7 @@
     
          if (isset($_POST['submit'])) {
             $std_id = $_POST["std_id"];
+            $name_e = $_POST["name_e"];
             $dis_e = $_POST["dis_e"];
             $date_e1 = $_POST["date_e1"];
             $time_e1 = $_POST["time_e1"];
@@ -20,7 +21,7 @@
                 } 
 
 
-             $sql="INSERT INTO `even_216h`(`std_id`,`dis_e`,`date_e1`, `time_e1`, `time_e2`, `sum_time`, `img`) VALUES ('$std_id','$dis_e','$date_e1','$time_e1','$time_e2','$sum_time','$image')";
+             $sql="INSERT INTO `even_216h`(`std_id`,name_e,`dis_e`,`date_e1`, `time_e1`, `time_e2`, `sum_time`, `img`) VALUES ('$std_id','$name_e','$dis_e','$date_e1','$time_e1','$time_e2','$sum_time','$image')";
             $query= mysqli_query( $condb, $sql);
             if (move_uploaded_file($_FILES['files']['tmp_name'],$target)) {
                $msg = "Image uploaded successfully";

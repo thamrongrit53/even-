@@ -21,6 +21,8 @@
 	else
 	{		
 			$_SESSION["email"] = $objResult["email"];
+			$_SESSION["pre"] = $objResult["pre"];
+			$_SESSION["password"] = $objResult["password"];
 			$_SESSION["f_name"] = $objResult["f_name"];
 			$_SESSION["l_name"] = $objResult["l_name"];
 			$_SESSION["class"] = $objResult["class"];
