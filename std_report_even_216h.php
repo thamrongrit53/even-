@@ -3,7 +3,7 @@ require_once('condb.php');
 require_once('session_std.php');
 require_once('navbar.php'); 
 $std_id=$_SESSION["std_id"];
-$query1="SELECT SUM(sum_time) AS num1 FROM even_216h WHERE std_id='$std_id'";
+$query1="SELECT SUM(sum_time) AS num1 FROM even_216h WHERE std_id='$std_id' AND status='อนุญาต'";
 $result1 = mysqli_query($condb,$query1);
 $objResult1 = mysqli_fetch_array($result1,MYSQLI_ASSOC);
 ?>

@@ -41,7 +41,7 @@ if(mysqli_num_rows($result) > 0)
 }
 else
 {
- echo 'ไมพบข้อมูล';
+ echo 'ไม่พบข้อมูล';
 }
 
 ?>

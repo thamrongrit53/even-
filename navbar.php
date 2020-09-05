@@ -1,6 +1,10 @@
 <?php 
 require_once('session_std.php');
 
+$std_id=$_SESSION["std_id"];
+$query1="SELECT SUM(score) AS num1 FROM behavior WHERE std_id='$std_id'";
+$result1 = mysqli_query($condb,$query1);
+$objResult1 = mysqli_fetch_array($result1,MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +78,7 @@ require_once('session_std.php');
        ?>
 
     <?php 
-    if ($_SESSION["class"]=="ปวส.2เสาร์-อาทิตย์") {
+    if ($_SESSION["class"]=="ปวส.2เสาร์-อาทิตย์"||$_SESSION["class"]=="ปวส.1เสาร์-อาทิตย์") {
         echo ' <li class="nav-item">
         <a class="nav-link" href="https://bit.ly/2Q8wwk1">ใบลา</a>
       </li>';
@@ -86,7 +90,9 @@ require_once('session_std.php');
 
     ?>
 
-     
+     <li class="nav-item">
+      <a class="nav-link" href="std_report_behavior.php">คงเหลือ&nbsp;<?php echo 100-$objResult1["num1"]; ?> &nbsp;คะแนน</a>
+      </li>
 
     </ul>
 

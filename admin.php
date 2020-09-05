@@ -123,17 +123,14 @@ $query3 = "SELECT COUNT(id) AS totol, name_e AS datesave FROM join_even GROUP BY
       if ($th > 7 && $row21["status"]=='เข้า' ) {
         if ($th > 7 && $ti > 30) {
           echo "สาย";
-        }elseif ($th > 8) {
-          echo "สาย";
-        }else{
-          echo "ปกติ";
-        }
-           
           $count_late=$count_late+1;
              $cc = $count_late;
-           }elseif($th > 5 && $row21["status"]=='เข้า' ) {
+        }else{
+          echo "สาย";
+        } 
+          
+      }else{
              echo "ปกติ";
-
     }
    }
      ?></td>

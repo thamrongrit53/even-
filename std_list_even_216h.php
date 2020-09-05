@@ -29,6 +29,7 @@ if(mysqli_num_rows($result) > 0)
      <th>วันที่</th>
      <th>เวลา</th>
     <th>รวมเวลา/ชม.</th>
+    <th>สถานะ</th>
     <th>รูป</th>
     <th></th>
     </tr>
@@ -43,6 +44,7 @@ if(mysqli_num_rows($result) > 0)
     <td>'.$row["date_e1"].'</td>
     <td>'.$row["time_e1"]." "."ถึง"." ".$row["time_e2"].'</td>
     <td>'.$row["sum_time"].'</td>
+    <td><span class="badge badge-warning">'.$row["status"].'</span></td>
     <td><a target="_blank" href="img_even216/'.$row["img"].'"><img src="img_even216/'.$row["img"].'" style=" width: 80px;height: 40px;"></a></td>
     <td><button class="btn btn-danger" style="margin-top: 10px;"><a href="delete_even216_std.php?id='.$row["id"].'">ลบ</a></button></td>   
    </tr>

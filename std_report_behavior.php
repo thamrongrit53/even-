@@ -15,7 +15,7 @@ $objResult1 = mysqli_fetch_array($result1,MYSQLI_ASSOC);
        <div class="card bg-dark text-white" style="border-radius: 20px;">
     <div class="card-body text-center">
    <h2>รายงานคะแนนพฤติกรรม</h2><br>
-       <h2>เหลือ<?php echo 100-$objResult1["num1"]; ?> &nbsp;คะแนน</h2><br> 
+       <h2>เหลือ&nbsp;<?php echo 100-$objResult1["num1"]; ?> &nbsp;คะแนน</h2><br> 
       </div>
       </div>
     		
@@ -24,6 +24,7 @@ $objResult1 = mysqli_fetch_array($result1,MYSQLI_ASSOC);
 		</div>
 	</div>   
 </div>
+
 
 <?php 
 require_once('footer.php'); 

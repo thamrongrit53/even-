@@ -29,6 +29,7 @@ if(mysqli_num_rows($result) > 0)
      <th>เวลา</th>
      <th>รวมเวลา/ชม.</th>
     <th>รูป</th>
+    <th>สถานะ</th>
     </tr>
  ';
  while($row = mysqli_fetch_array($result))
@@ -42,6 +43,14 @@ if(mysqli_num_rows($result) > 0)
     <td>'.$row["time_e1"]." "."ถึง"." ".$row["time_e2"].'</td>
        <td>'.$row["sum_time"].'</td>
     <td><a target="_blank" href="img_even216/'.$row["img"].'"><img src="img_even216/'.$row["img"].'" style=" width: 80px;height: 40px;"></a></td>
+    <td>
+                  <span class="badge badge-warning">'.$row["status"].'</span>
+                    <form action="update_status_even216.php?id='.$row["id"].'" method="POST">
+                    <input type="radio" name="approve" value="ไม่อนุญาต">ไม่อนุญาต<br>
+                     <input type="radio" name="approve" value="อนุญาต">อนุญาต <br>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                    </form>
+    </td>
    </tr>
   ';
  }

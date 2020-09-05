@@ -6,8 +6,10 @@
             $std_id = $_POST["std_id"];
             $be_type = $_POST["type"];
             $score = $_POST["score"];
+            $time=date("d-m-Y H:i:s");
+
             $dis=$_POST["dis"];
-         $sql="INSERT INTO `behavior`(`block`, `std_id`, `be_type`, `score`, `dis`) VALUES ('$block','$std_id','$be_type','$score','$dis')";
+         $sql="INSERT INTO `behavior`(`block`, `std_id`, `be_type`, `score`, `dis`,`date`) VALUES ('$block','$std_id','$be_type','$score','$dis','$time')";
             $query= mysqli_query( $condb, $sql);
            
            if (!$query) {
