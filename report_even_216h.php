@@ -10,13 +10,13 @@ require_once('navbar_admin.php');
       
 
 
-        <h3>บันทึกชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</h3>
-<!--          <div class="form-group">
+        <h3>บันทึกชั่วโมงวิชาโครงการ</h3>
+         <div class="form-group">
     <div class="input-group">
      <span class="input-group-addon">ค้นหา</span>
-     <input type="text" name="search_text" id="search_text" placeholder="กิจกรรม" class="form-control" />
+     <input type="text" name="search_text" id="search_text" placeholder="รหัสนักศึกษา" class="form-control" />
     </div>
-   </div> -->
+   </div>
         
         <div id="result"></div>
       

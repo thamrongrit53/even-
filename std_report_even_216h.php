@@ -14,7 +14,7 @@ $objResult1 = mysqli_fetch_array($result1,MYSQLI_ASSOC);
 			<div class="text-center">
           <div class="card bg-dark text-white" style="border-radius: 20px;">
     <div class="card-body text-center">
-   <h2>รายงานชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</h2><br>
+   <h2>รายงานชั่วโมงวิชาโครงการ</h2><br>
        <h2><?php echo number_format((float)$objResult1["num1"], 1, '.', ''); ?> &nbsp;ชั่วโมง</h2><br> 
       </div>
       </div>

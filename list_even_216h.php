@@ -9,20 +9,22 @@ mysqli_set_charset($condb,"utf8");
 { 
  $search = mysqli_real_escape_string($condb, $_POST["query"]);
  $query = "
-  SELECT * FROM even_216h WHERE std_id LIKE '%".$search."%'";
+  SELECT even_216h.*,std.f_name,std.l_name FROM even_216h LEFT JOIN std ON even_216h.std_id = std.std_id  WHERE even_216h.std_id LIKE '%".$search."%'";
 }
 else
 {
- $query = "SELECT * FROM `even_216h` ORDER BY id DESC";
+ $query = "SELECT even_216h.*,std.f_name,std.l_name FROM even_216h LEFT JOIN std ON even_216h.std_id = std.std_id  ORDER BY even_216h.id DESC";
 }
 $result = mysqli_query($condb,$query);
 if(mysqli_num_rows($result) > 0)
 {
  $output .= '
+      <a href="even_216h_excel.php?act='.$search.'" class="btn btn-success"> Export->Excel </a>
   <div class="table-responsive">
    <table class="table table bordered">
     <tr>
     <th>รหัสนักศึกษา</th>
+    <th>ชื่อ-นามสกุล</th>
      <th>กิจกรรม/รายละเอียดกิจกรรมที่นักศึกษาร่วมดำเนินการ</th>
     <th>สิ่งที่ได้เรียนรู้จากกิจกรรม</th>
      <th>วันที่</th>
@@ -37,6 +39,7 @@ if(mysqli_num_rows($result) > 0)
   $output .= '
    <tr>
    <td>'.$row["std_id"].'</td>
+   <td>'.$row["f_name"]." ".$row["l_name"].'</td>
 <td>'.$row["name_e"].'</td>
     <td>'.$row["dis_e"].'</td>
         <td>'.$row["date_e1"].'</td>

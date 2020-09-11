@@ -61,7 +61,7 @@ $objResult1 = mysqli_fetch_array($result1,MYSQLI_ASSOC);
           รายงาน
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="std_report_even_216h.php">รายงานชั่วโมงวิชาโครการพัฒนาทักษะอาชีพ</a>
+          <a class="dropdown-item" href="std_report_even_216h.php">รายงานชั่วโมงวิชาโครงการ</a>
           <a class="dropdown-item" href="std_report_even_36h.php">รายงานชั่วโมงกิจกรรมองค์การวิชาชีพ</a>
         <a class="dropdown-item" href="std_report_behavior.php">รายงานคะแนนพฤติกรรม</a>
 
